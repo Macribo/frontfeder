@@ -1,38 +1,24 @@
 //jshint esversion:6
+const countyNames = require("./county-names");
 
+const contae = document.querySelector("#contae");
 
-let badge = document.querySelector("#badge");
-let contae = document.querySelector("#contae");
-let storyText = document.querySelector("#story-text");
+let countyId = 0;
 
-
-
+const badge = document.querySelector("#badge");
+badge.addEventListener("click", updateCounty); //notice no brackets on updateCounty
 
 
 function updateCounty(){
-    badgeBG -= 80;
-    badge.style.backgroundPositionX = badgeBG+"px";
-    updateContae(badgeBG);
-    console.log(badgeBG); 
-
-
+    countyId =  (countyId + 1) % countyNames.length; // use modulo to ensure we never step outside the array
+    badge.style.backgroundPositionX = - countyId * 80 + "px";
+    console.log(countyId); 
+    contae.innerHTML = countyNames[countyId];
 }
 
 
-let badgeBG = 0;
-badge.style.backgroundPositionX= badgeBG.badgeBG + "px";
-let badgeWindow = {
-    x:0,
-    y:0,
-    width:badge.style.width,
-    height:badge.style.height
-};
+//headspace.com
 
-
-
-badge.addEventListener("click", function(event){
-    updateCounty();
-});
 //to animate use requestanimationframe (raf)
 //get user input.
 //At time of selection:
@@ -44,7 +30,9 @@ badge.addEventListener("click", function(event){
 //  - how much time has passed since the user made selection is the basis for calculating the current X position. how we control the speed.
 
 
+// -------------------
 
+let storyText = document.querySelector("#story-text");
 storyTexts = [
     `Shh...
     Shh....
@@ -72,151 +60,3 @@ storyText.addEventListener("click", function(event){
 
 
 
-
-function updateContae(badgeBG){
-    switch(badgeBG){
-        case 0 : contae.innerHTML = ainmContae[0];
-            break;
-
-        case -80:   contae.innerHTML = ainmContae[1];
-            break;
-
-        case -160: contae.innerHTML = ainmContae[2];
-            break;
-
-        case -240: contae.innerHTML = ainmContae[3];
-            break;
-
-        case -320: contae.innerHTML = ainmContae[4];
-            break;
-
-        case -400: contae.innerHTML = ainmContae[5];
-            break;
-
-        case -480: contae.innerHTML = ainmContae[6];
-            break;
-        
-        case -560: contae.innerHTML = ainmContae[7];
-            break;
-
-        case -640: contae.innerHTML = ainmContae[8];
-            break;
-
-        case -720: contae.innerHTML = ainmContae[9];
-            break;
-
-        case -800: contae.innerHTML = ainmContae[10];
-            break;
-
-        case -880: contae.innerHTML = ainmContae[11];
-            break;
-
-        case -960: contae.innerHTML = ainmContae[12];
-            break;
-
-        case -1040: contae.innerHTML = ainmContae[13];
-            break;
-
-        case -1120: contae.innerHTML = ainmContae[14];
-            break;
-
-        case -1200: contae.innerHTML = ainmContae[15];
-            break;
-        
-        case -1280: contae.innerHTML = ainmContae[16];
-            break;
-        
-        case -1360: contae.innerHTML = ainmContae[17];
-            break;
-
-        case -1440: contae.innerHTML = ainmContae[18];
-            break;
-
-        case -1520: contae.innerHTML = ainmContae[19];
-            break;
-
-        case -1600: contae.innerHTML = ainmContae[20];
-            break;
-        
-        case -1680: contae.innerHTML = ainmContae[21];
-            break;
-
-        case -1760: contae.innerHTML = ainmContae[22];
-            break;
-
-        case -1840: contae.innerHTML = ainmContae[23];
-            break;
-
-        case -1920: contae.innerHTML = ainmContae[24];
-            break;
-
-        case -2000: contae.innerHTML = ainmContae[25];
-            break;
-
-        case -2080: contae.innerHTML = ainmContae[26];
-            break;
-
-        case -2160: contae.innerHTML = ainmContae[27];
-            break;
-
-        case -2240: contae.innerHTML = ainmContae[28];
-            break;
-
-        case -2320: contae.innerHTML = ainmContae[29];
-            break;
-
-        case -2400: contae.innerHTML = ainmContae[30];
-            break;
-
-        case -2480: contae.innerHTML = ainmContae[31];
-            break;
-
-        case -2560: contae.innerHTML = ainmContae[32];
-            break;
-
-        default:
-            break;
-
-
-
-    }
-
-}
-
-
-let ainmContae = [
-    'Uíḃ Ḟailí',
-    'Lú',
-    'Loch Garman',
-    'Luimnigh',
-    'Ḃaile Átha Ċliath',
-    'Liatroma',
-    'Aontroma',
-    'Ḋún na nGall',
-    'Ḟear Manaċ',
-    'Ċorcaí',
-    'Ċill Ṁantáin',
-    'Ros Comáin',
-    'Ḋoire',
-    'Ṡligiġ',
-    'Ṫiobraid Árann',
-    'Laoise',
-    'Ṗort Láirge',
-    'Ċill Ċainniġ',
-    'Na Mí',
-    'Ċiarraí',
-    'An LongFoirt',
-    'Ṁaigh Eo',
-    'Na hIarṁí',
-    'An Dúin',
-    'Ard Ṁaċa',
-    'Ċeaṫarlaċ',
-    'Ṁuineaċáin',
-    'na Gailliṁe',
-    'Ċill Dara',
-    'An Ċláir',
-    'An Caḃáin',
-    'Ṫír Eoghain',
-    'Thar lar'
-
-];
