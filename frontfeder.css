@@ -1,0 +1,62 @@
+@font-face {
+    font-family: "Courier Prime Code";
+    /* src: url("http://quoteunquoteapps.com/courierprime/#code-sans"); */
+    src:url("fonts/Courier Prime Code.ttf");
+
+}
+
+#container{
+    display: flex;
+    flex-direction: row;
+
+}
+
+#text{
+    background-image: url("images/bg1.png");
+    width:800px;
+    height:475px;
+    background-repeat: no-repeat;
+    margin: 10px auto;
+}
+
+#story-text{
+    width: 500px;
+    position: absolute;
+    margin: 150px;
+    font-family: "Courier Prime Code";
+
+}
+
+
+#geaga {
+    width: 150px;
+    height:400px;
+    background-image: url("images/geaga.png");
+}
+
+#dealbh {
+    position:relative;
+    background-image: url("images/dealbh.png");
+    height:342px ;
+    width:150px;
+}
+#badge {
+    position:absolute;
+    top:75px;
+    left: 59px;
+    background-image:url("images/badges.png");
+    z-index: 20;
+    opacity: 1;
+    width:80px;
+    height:80px;
+}
+
+#contae {
+    position:relative;
+    width: 140px;
+    margin: 10px;
+    font-family:"Courier Prime Code";
+    z-index: 30;
+    color: white;
+}
+
