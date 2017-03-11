@@ -4,23 +4,33 @@ const countyNames = require("./county-names");
 const contae = document.querySelector("#contae");
 
 let countyId = 0;
-
 const badge = document.querySelector("#badge");
-badge.addEventListener("click", updateCounty); //notice no brackets on updateCounty
+let badgeWidth = 80; 
+console.log('>>>>>>>', badgeWidth);
+badge.addEventListener("click", changeCounty); //notice no brackets on updateCounty
 
 
-function updateCounty(){
+let changeCountyTime;
+function changeCounty(){
     countyId =  (countyId + 1) % countyNames.length; // use modulo to ensure we never step outside the array
-    badge.style.backgroundPositionX = - countyId * 80 + "px";
+    badge.style.backgroundPositionX = - countyId * badgeWidth + "px";
     console.log(countyId); 
     contae.innerHTML = countyNames[countyId];
+    changeCountyTime = Date.now();
 }
-
 
 //headspace.com
 
 //to animate use requestanimationframe (raf)
-//get user input.
+//get user input
+//
+//
+setInterval( function() {
+    
+
+}, 1000/60);
+
+
 //At time of selection:
 //  - save current backgroundPositionX; 
 //  - save time of user input with current time with Date.now();
@@ -57,6 +67,3 @@ storyText.addEventListener("click", function(event){
     storyText.innerHTML = storyTexts[story]; 
     //console.log(story);
 });
-
-
-

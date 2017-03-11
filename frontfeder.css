@@ -4,13 +4,6 @@
     src:url("fonts/Courier Prime Code.ttf");
 
 }
-
-#container{
-    display: flex;
-    flex-direction: row;
-
-}
-
 #text{
     background-image: url("images/bg1.png");
     width:800px;
@@ -60,3 +53,13 @@
     color: white;
 }
 
+
+.parent{
+
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.item{
+}
