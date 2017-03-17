@@ -5,11 +5,17 @@
 
 }
 #text{
-    background-image: url("images/bg1.png");
+    background-image: url("images/bg2.png");
     width:800px;
     height:475px;
     background-repeat: no-repeat;
     margin: 10px auto;
+    transition: .25s background-image ease-out;
+
+}
+
+#text:hover{
+    background-image: url("images/bg1.png");
 }
 
 #story-text{
