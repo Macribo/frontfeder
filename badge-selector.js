@@ -1,7 +1,6 @@
 //jshint esversion:6
-module.exports = function badgeSelector() {
+module.exports = function badgeSelector(duration) {
     const countyNames = require("./county-names");
-    const duration = 500;
     const contae = document.querySelector("#contae");
 
     let countyId = 0;
